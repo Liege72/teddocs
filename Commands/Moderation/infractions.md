@@ -1,6 +1,7 @@
 ---
-label: Moderation
-icon: shield-check
+label: Infractions
+# icon: shield-check
+icon: dot-fill
 order: 100
 ---
 

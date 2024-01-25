@@ -1,6 +1,7 @@
 ---
 label: Reason Shortcuts
-icon: clock
+# icon: clock
+icon: dot-fill
 order: 70
 ---
 

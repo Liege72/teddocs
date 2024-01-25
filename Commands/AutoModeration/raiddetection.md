@@ -1,7 +1,8 @@
 ---
-icon: shield
+# icon: shield
+icon: dot-fill
 label: Raid Detection
-order: 90
+order: 100
 ---
 
 # Raid Detection
@@ -15,12 +16,12 @@ This feature currently only works on guilds with over 1000 members.
 
 === Enabling raid detection
 ```
-/enable raid-detection <action> <slowmode?>
+/enable raid-detection <slowmode?>
 ```
 Enables raid detection; the bot will take action when a raid is detected. 
 ===
 
-==! Disabling raid detection
+==- Disabling raid detection
 ```
 /disable raid-detection
 ```

@@ -1,6 +1,7 @@
 ---
-icon: circle-slash
 label: Censoring Terms & Regex
+# icon: circle-slash
+icon: dot-fill
 order: 90
 ---
 

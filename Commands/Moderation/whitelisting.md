@@ -1,6 +1,7 @@
 ---
 label: Whitelisting
-icon: issue-closed
+# icon: issue-closed
+icon: dot-fill
 order: 80
 ---
 
