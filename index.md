@@ -1,6 +1,6 @@
 ---
 label: Setup
-icon: home-fill
+icon: rocket
 # icon: mortar-board
 ---
 
