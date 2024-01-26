@@ -1,11 +1,12 @@
 input: .
 output: .retype
-url: # Add your website address here
+url: ted.liege.dev
 branding:
-  title: TED Documentation
+  title: TED
   label: Docs
-links:
-- text: Getting Started
-  link: https://retype.com/guides/getting-started/
+  logo: /favicon.png
 footer:
   copyright: "&copy; Copyright {{ year }}. All rights reserved."
+favicon: /favicon.png
+serve:
+  port: 5050
