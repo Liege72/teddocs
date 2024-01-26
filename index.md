@@ -2,6 +2,7 @@
 label: Setup
 icon: rocket
 # icon: mortar-board
+order: 90
 ---
 
 # Setting Up TED
