@@ -9,33 +9,34 @@
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>Threat Evaluations</title>
-    <meta name="title" content="Threat Evaluations">
-    <meta name="description" content="Each user has a threat level that is displayed in the color of the flag they have.">
+    <title>Guild settings</title>
+    <meta name="title" content="Guild settings">
+    <meta name="description" content="Name">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://ted.liege.dev/threatsandflags/threats/">
+    <link rel="canonical" href="https://ted.liege.dev/api/requests/guildsettings/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ted.liege.dev/threatsandflags/threats/">
-    <meta property="og:title" content="Threat Evaluations">
-    <meta property="og:description" content="Each user has a threat level that is displayed in the color of the flag they have.">
+    <meta property="og:url" content="https://ted.liege.dev/api/requests/guildsettings/">
+    <meta property="og:title" content="Guild settings">
+    <meta property="og:description" content="Name">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://ted.liege.dev/threatsandflags/threats/">
-    <meta property="twitter:title" content="Threat Evaluations">
-    <meta property="twitter:description" content="Each user has a threat level that is displayed in the color of the flag they have.">
+    <meta property="twitter:url" content="https://ted.liege.dev/api/requests/guildsettings/">
+    <meta property="twitter:title" content="Guild settings">
+    <meta property="twitter:description" content="Name">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.5.0.775619953140" rel="stylesheet">
+    <link href="../../../favicon.png" rel="icon">
+    <link href="../../../resources/css/retype.css?v=3.5.0.775619953140" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.775619953140" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.775619953140" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.775619953140" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.775619953140" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.775619953140" defer></script>
 
     <style>
         .api-container-parent {
@@ -90,10 +91,10 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-2xl">
+                        <a id="docs-site-logo" href="../../../" class="flex items-center leading-snug text-2xl">
                             <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                                <img class="max-h-10 dark:hidden md:inline-block" src="../../favicon.png">
-                                <img class="max-h-10 hidden dark:inline-block" src="../../favicon.png">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="../../../favicon.png">
+                                <img class="max-h-10 hidden dark:inline-block" src="../../../favicon.png">
                             </span>
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">TED</span>
                         </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Docs</span>
@@ -194,22 +195,487 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="threat-evaluations" class="break-words">
+<doc-anchor-target id="guild-settings" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#threat-evaluations">#</doc-anchor-trigger>
-        <span>Threat Evaluations</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#guild-settings">#</doc-anchor-trigger>
+        <span>Guild settings</span>
     </h1>
 </doc-anchor-target>
-<p>Each user has a threat level that is displayed in the color of the flag they have. Threat evaluations are determined by the users activity and how they behave on Discord. For example: should a user spam, TED collects this information and builds an evaluation.</p>
-<p>If a user is less trusted by TED, harsher actions will be taken when they behave poorly. TED will be more lenient with trusted users.</p>
-<p>You can see the different threat evaluations below.</p>
-<ul>
-<li>Alpha</li>
-<li>Bravo</li>
-<li>Charlie</li>
-<li>Delta</li>
-<li>Echo</li>
-</ul>
+<div class="api-container-parent">
+    <span class="api-method-get">GET</span>
+    <span class="api-container-text">https://liege.dev/api<b>/settings/getsetting</b></span>
+</div>
+<br>
+<doc-panels>
+   <doc-panel id="example-request" collapsed>
+       <template #title>Example request</template>
+<doc-tabs>
+<doc-tab v-cloak id="curl">
+<template #title>cURL</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">curl https://liege.dev/api/settings/getsetting \
+    --header &quot;Authorization: Bearer BEARER_TOKEN&quot; \
+    --header &quot;Content-Type: application/json&quot; \
+    --request GET \
+    --data '{ &quot;guildid&quot;: 000000000000000000, &quot;setting&quot;: 0 }'</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="c">
+<template #title>C#</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-csharp"><code v-pre class="language-csharp">using System.Net.Http;
+using System.Net.Http.Headers;
+
+HttpClient client = new HttpClient();
+
+HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, &quot;https://liege.dev/api/settings/getsetting&quot;);
+
+request.Headers.Add(&quot;Authorization&quot;, &quot;Bearer BEARER_TOKEN&quot;);
+
+request.Content = new StringContent(&quot;{ \&quot;guildid\&quot;: 000000000000000000, \&quot;setting\&quot;: 0 }&quot;);
+request.Content.Headers.ContentType = new MediaTypeHeaderValue(&quot;application/json&quot;);
+
+HttpResponseMessage response = await client.SendAsync(request);
+response.EnsureSuccessStatusCode();
+string responseBody = await response.Content.ReadAsStringAsync();</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="js">
+<template #title>JS</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-javascript"><code v-pre class="language-javascript">fetch(&quot;https://liege.dev/api/settings/getsetting&quot;, {
+    headers: {
+        Authorization: &quot;Bearer BEARER_TOKEN&quot;,
+        &quot;Content-Type&quot;: &quot;application/json&quot;,
+    },
+    body: '{ &quot;guildid&quot;: 000000000000000000, &quot;setting&quot;: 0 }',
+});</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="python">
+<template #title>Python</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">import requests
+
+headers = {
+    'Authorization': 'Bearer BEARER_TOKEN',
+    'Content-Type': 'application/json',
+}
+
+data = '{ &quot;guildid&quot;: 000000000000000000, &quot;setting&quot;: 0 }'
+
+response = requests.get('https://liege.dev/api/settings/getsetting', headers=headers, data=data)</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="java">
+<template #title>Java</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-java"><code v-pre class="language-java">import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpRequest.BodyPublishers;
+import java.net.http.HttpResponse;
+
+HttpClient client = HttpClient.newHttpClient();
+
+HttpRequest request = HttpRequest.newBuilder()
+    .uri(URI.create(&quot;https://liege.dev/api/settings/getsetting&quot;))
+    .method(&quot;GET&quot;, BodyPublishers.ofString(&quot;{ \&quot;guildid\&quot;: 000000000000000000, \&quot;setting\&quot;: 0 }&quot;))
+    .setHeader(&quot;Authorization&quot;, &quot;Bearer BEARER_TOKEN&quot;)
+    .setHeader(&quot;Content-Type&quot;, &quot;application/json&quot;)
+    .build();
+
+HttpResponse&lt;String&gt; response = client.send(request, HttpResponse.BodyHandlers.ofString());</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+</doc-tabs>
+   </doc-panel>
+   <doc-panel id="request-body" collapsed>
+       <template #title>Request body</template>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="compact">
+<thead>
+<tr>
+<th><b>Name</b></th>
+<th><b>Type</b></th>
+<th><b>Description</b> </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>guildid</td>
+<td><code v-pre>string</code></td>
+<td>The Discord guild ID of the guild to be retrieved.</td>
+</tr>
+<tr>
+<td>setting</td>
+<td><code v-pre>int</code></td>
+<td>The Discord channel ID of the channel to be set to receive modlogs.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="setting">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#setting">#</doc-anchor-trigger>
+        <span>Setting</span>
+    </h5>
+</doc-anchor-target>
+<br>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="compact">
+<thead>
+<tr>
+<th><b>Setting</b></th>
+<th><b>Value</b> </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Spam</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Scam</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Invite</td>
+<td>2</td>
+</tr>
+<tr>
+<td>DOX</td>
+<td>3</td>
+</tr>
+<tr>
+<td>AI</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Raid</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+</div>
+   </doc-panel>
+   <doc-panel id="example-response" collapsed>
+       <template #title>Example response</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-json"><code v-pre class="language-json">{
+    &quot;isEnabled&quot;: true,
+    &quot;action&quot;: 1,
+    &quot;slowmodeInterval&quot;: 3
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="action-is-autoaction">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#action-is-autoaction">#</doc-anchor-trigger>
+        <span><code v-pre>action</code> is AutoAction</span>
+    </h5>
+</doc-anchor-target>
+<br>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="compact">
+<thead>
+<tr>
+<th><b>Action</b></th>
+<th><b>Value</b> </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Delete</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Warn</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Timeout30m</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Timeout6h</td>
+<td>3</td>
+</tr>
+<tr>
+<td>TimeoutIndefinitely</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Kick</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Ban7d</td>
+<td>6</td>
+</tr>
+<tr>
+<td>BanPern</td>
+<td>7</td>
+</tr>
+</tbody>
+</table>
+</div>
+   </doc-panel>
+</doc-panels>
+<hr>
+<div class="api-container-parent">
+    <span class="api-method-post">POST</span>
+    <span class="api-container-text">https://liege.dev/api<b>/settings/setsetting</b></span>
+</div>
+<br>
+<doc-panels>
+   <doc-panel id="example-request" collapsed>
+       <template #title>Example request</template>
+<doc-tabs>
+<doc-tab v-cloak id="curl">
+<template #title>cURL</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">curl https://liege.dev/api/settings/setsetting \
+    --header &quot;Authorization: Bearer BEARER_TOKEN&quot; \
+    --header &quot;Content-Type: application/json&quot; \
+    --request POST \
+    --data '{ &quot;guildid&quot;: 000000000000000000, &quot;setting&quot;: 1, &quot;config&quot;: { &quot;isEnabled&quot;: true, &quot;action&quot;: 1, &quot;slowmodeInterval&quot;: 3 } }'</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="c">
+<template #title>C#</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-csharp"><code v-pre class="language-csharp">using System.Net.Http;
+using System.Net.Http.Headers;
+
+HttpClient client = new HttpClient();
+
+HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, &quot;https://liege.dev/api/settings/setsetting&quot;);
+
+request.Headers.Add(&quot;Authorization&quot;, &quot;Bearer BEARER_TOKEN&quot;);
+
+request.Content = new StringContent(&quot;{ \&quot;guildid\&quot;: 000000000000000000, \&quot;setting\&quot;: 1, \&quot;config\&quot;: { \&quot;isEnabled\&quot;: true, \&quot;action\&quot;: 1, \&quot;slowmodeInterval\&quot;: 3 } }&quot;);
+request.Content.Headers.ContentType = new MediaTypeHeaderValue(&quot;application/json&quot;);
+
+HttpResponseMessage response = await client.SendAsync(request);
+response.EnsureSuccessStatusCode();
+string responseBody = await response.Content.ReadAsStringAsync();</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="js">
+<template #title>JS</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-javascript"><code v-pre class="language-javascript">fetch(&quot;https://liege.dev/api/settings/setsetting&quot;, {
+    method: &quot;POST&quot;,
+    headers: {
+        Authorization: &quot;Bearer BEARER_TOKEN&quot;,
+        &quot;Content-Type&quot;: &quot;application/json&quot;,
+    },
+    body: '{ &quot;guildid&quot;: 000000000000000000, &quot;setting&quot;: 1, &quot;config&quot;: { &quot;isEnabled&quot;: true, &quot;action&quot;: 1, &quot;slowmodeInterval&quot;: 3 } }',
+});</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="python">
+<template #title>Python</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">import requests
+
+headers = {
+    'Authorization': 'Bearer BEARER_TOKEN',
+    'Content-Type': 'application/json',
+}
+
+data = '{ &quot;guildid&quot;: 000000000000000000, &quot;setting&quot;: 1, &quot;config&quot;: { &quot;isEnabled&quot;: true, &quot;action&quot;: 1, &quot;slowmodeInterval&quot;: 3 } }'
+
+response = requests.post('https://liege.dev/api/settings/setsetting', headers=headers, data=data)</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="java">
+<template #title>Java</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-java"><code v-pre class="language-java">import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpRequest.BodyPublishers;
+import java.net.http.HttpResponse;
+
+HttpClient client = HttpClient.newHttpClient();
+
+HttpRequest request = HttpRequest.newBuilder()
+    .uri(URI.create(&quot;https://liege.dev/api/settings/setsetting&quot;))
+    .POST(BodyPublishers.ofString(&quot;{ \&quot;guildid\&quot;: 000000000000000000, \&quot;setting\&quot;: 1, \&quot;config\&quot;: { \&quot;isEnabled\&quot;: true, \&quot;action\&quot;: 1, \&quot;slowmodeInterval\&quot;: 3 } }&quot;))
+    .setHeader(&quot;Authorization&quot;, &quot;Bearer BEARER_TOKEN&quot;)
+    .setHeader(&quot;Content-Type&quot;, &quot;application/json&quot;)
+    .build();
+
+HttpResponse&lt;String&gt; response = client.send(request, HttpResponse.BodyHandlers.ofString());</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+</doc-tabs>
+   </doc-panel>
+   <doc-panel id="request-body" collapsed>
+       <template #title>Request body</template>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="compact">
+<thead>
+<tr>
+<th><b>Name</b></th>
+<th><b>Type</b></th>
+<th><b>Description</b> </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>guildid</td>
+<td><code v-pre>string</code></td>
+<td>The Discord guild ID of the guild to be retrieved.</td>
+</tr>
+<tr>
+<td>setting</td>
+<td><code v-pre>int</code></td>
+<td>The Discord channel ID of the channel to be set to receive modlogs.</td>
+</tr>
+<tr>
+<td>config</td>
+<td><code v-pre>object</code></td>
+<td>The new settings that are to be set in the provided guild. See the <code v-pre>config</code> object below.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="config-object">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#config-object">#</doc-anchor-trigger>
+        <span><code v-pre>config</code> object</span>
+    </h5>
+</doc-anchor-target>
+<br>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="compact">
+<thead>
+<tr>
+<th><b>Name</b></th>
+<th><b>Type</b></th>
+<th><b>Description</b> </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>isEnabled</td>
+<td><code v-pre>bool</code></td>
+<td>Set to true to enable the provided setting; false otherwise.</td>
+</tr>
+<tr>
+<td>action</td>
+<td><code v-pre>int</code></td>
+<td>The action that should be automaticall taken when the setting is triggered.</td>
+</tr>
+<tr>
+<td>slowmodeInterval</td>
+<td><code v-pre>int</code></td>
+<td>The slowmode interval to be set in the current channel upon the setting being triggered.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<doc-anchor-target id="setting-1">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#setting-1">#</doc-anchor-trigger>
+        <span>Setting</span>
+    </h5>
+</doc-anchor-target>
+<br>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="compact">
+<thead>
+<tr>
+<th><b>Setting</b></th>
+<th><b>Value</b> </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Spam</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Scam</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Invite</td>
+<td>2</td>
+</tr>
+<tr>
+<td>DOX</td>
+<td>3</td>
+</tr>
+<tr>
+<td>AI</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Raid</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="action-is-autoaction-1">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#action-is-autoaction-1">#</doc-anchor-trigger>
+        <span><code v-pre>action</code> is AutoAction</span>
+    </h5>
+</doc-anchor-target>
+<br>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="compact">
+<thead>
+<tr>
+<th><b>Action</b></th>
+<th><b>Value</b> </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Delete</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Warn</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Timeout30m</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Timeout6h</td>
+<td>3</td>
+</tr>
+<tr>
+<td>TimeoutIndefinitely</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Kick</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Ban7d</td>
+<td>6</td>
+</tr>
+<tr>
+<td>BanPern</td>
+<td>7</td>
+</tr>
+</tbody>
+</table>
+</div>
+   </doc-panel>
+</doc-panels>
 
                                 
                                 <!-- Required only on API pages -->
@@ -219,20 +685,20 @@
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../threatsandflags/flags/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../api/requests/channelsettings/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Public Flags</span>
+                                                <span class="block mt-1">Channel settings</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../api/introduction/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../api/requests/logs/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Introduction</span>
+                                                <span class="block mt-1">Modlogs</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -276,6 +742,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Threat Evaluations", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Guild settings", level: 3, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>

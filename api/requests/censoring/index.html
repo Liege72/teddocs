@@ -9,24 +9,24 @@
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>Whitelisting Terms</title>
-    <meta name="title" content="Whitelisting Terms">
-    <meta name="description" content="Censored terms are prioritized; should a message contain both a censored and a whitelisted word, the message will be deleted.">
+    <title>Censoring</title>
+    <meta name="title" content="Censoring">
+    <meta name="description" content="Action">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://ted.liege.dev/commands/moderation/whitelisting/">
+    <link rel="canonical" href="https://ted.liege.dev/api/requests/censoring/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ted.liege.dev/commands/moderation/whitelisting/">
-    <meta property="og:title" content="Whitelisting Terms">
-    <meta property="og:description" content="Censored terms are prioritized; should a message contain both a censored and a whitelisted word, the message will be deleted.">
+    <meta property="og:url" content="https://ted.liege.dev/api/requests/censoring/">
+    <meta property="og:title" content="Censoring">
+    <meta property="og:description" content="Action">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://ted.liege.dev/commands/moderation/whitelisting/">
-    <meta property="twitter:title" content="Whitelisting Terms">
-    <meta property="twitter:description" content="Censored terms are prioritized; should a message contain both a censored and a whitelisted word, the message will be deleted.">
+    <meta property="twitter:url" content="https://ted.liege.dev/api/requests/censoring/">
+    <meta property="twitter:title" content="Censoring">
+    <meta property="twitter:description" content="Action">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
@@ -36,6 +36,7 @@
     <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.775619953140" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
     <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.775619953140" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.775619953140" defer></script>
 
     <style>
         .api-container-parent {
@@ -194,49 +195,474 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="whitelisting-terms" class="break-words">
+<doc-anchor-target id="censoring" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#whitelisting-terms">#</doc-anchor-trigger>
-        <span>Whitelisting Terms</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#censoring">#</doc-anchor-trigger>
+        <span>Censoring</span>
     </h1>
 </doc-anchor-target>
-<div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
-    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
-                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-<p>Censored terms are prioritized; should a message contain both a censored and a whitelisted word, the message will be deleted.</p>
-        </div>
-    </div>
+<div class="api-container-parent">
+    <span class="api-method-get">GET</span>
+    <span class="api-container-text">https://liege.dev/api<b>/censor?guildid={guildid}</b></span>
 </div>
-<doc-panel id="whitelisting-a-term">
-    <template #title>Whitelisting a term</template>
+<br>
+<doc-panels>
+   <doc-panel id="example-request" collapsed>
+       <template #title>Example request</template>
+<doc-tabs>
+<doc-tab v-cloak id="curl">
+<template #title>cURL</template>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">/whitelist add &lt;term&gt;</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">curl https://liege.dev/api/censors?guildid={guildid} \
+    --header &quot;Authorization: Bearer BEARER_TOKEN&quot;</code></pre>
 </doc-codeblock></div>
-<p>Adds the provided term to the whitelist, always allowing messages with it to be sent.</p>
-</doc-panel>
-<doc-panel id="unwhitelisting-a-term">
-    <template #title>Unwhitelisting a term</template>
+</doc-tab>
+<doc-tab v-cloak id="c">
+<template #title>C#</template>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">/whitelist remove &lt;term&gt;</code></pre>
+<pre class="language-csharp"><code v-pre class="language-csharp">using System.Net.Http;
+
+HttpClient client = new HttpClient();
+
+HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, &quot;https://liege.dev/api/censors?guildid={guildid}&quot;);
+
+request.Headers.Add(&quot;Authorization&quot;, &quot;Bearer BEARER_TOKEN&quot;);
+
+HttpResponseMessage response = await client.SendAsync(request);
+response.EnsureSuccessStatusCode();
+string responseBody = await response.Content.ReadAsStringAsync();</code></pre>
 </doc-codeblock></div>
-<p>Removes the provided term from the whitelist.</p>
-</doc-panel>
-<doc-panel id="viewing-the-whitelist">
-    <template #title>Viewing the whitelist</template>
+</doc-tab>
+<doc-tab v-cloak id="js">
+<template #title>JS</template>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">/whitelist list</code></pre>
+<pre class="language-javascript"><code v-pre class="language-javascript">fetch(&quot;https://liege.dev/api/censors?guildid={guildid}&quot;, {
+    headers: {
+        Authorization: &quot;Bearer BEARER_TOKEN&quot;,
+    },
+});</code></pre>
 </doc-codeblock></div>
-<p>Lists the guilds term whitelist.</p>
-</doc-panel>
+</doc-tab>
+<doc-tab v-cloak id="python">
+<template #title>Python</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">import requests
+
+headers = {
+    'Authorization': 'Bearer BEARER_TOKEN',
+}
+
+response = requests.get('https://liege.dev/api/censors?guildid={guildid}', headers=headers)</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="java">
+<template #title>Java</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-java"><code v-pre class="language-java">import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+
+HttpClient client = HttpClient.newHttpClient();
+
+HttpRequest request = HttpRequest.newBuilder()
+    .uri(URI.create(&quot;https://liege.dev/api/censors?guildid={guildid}&quot;))
+    .GET()
+    .setHeader(&quot;Authorization&quot;, &quot;Bearer BEARER_TOKEN&quot;)
+    .build();
+
+HttpResponse&lt;String&gt; response = client.send(request, HttpResponse.BodyHandlers.ofString());</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+</doc-tabs>
+   </doc-panel>
+   <doc-panel id="request-body" collapsed>
+       <template #title>Request body</template>
+<doc-anchor-target id="autoaction">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#autoaction">#</doc-anchor-trigger>
+        <span>AutoAction</span>
+    </h5>
+</doc-anchor-target>
+<br>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="compact">
+<thead>
+<tr>
+<th><b>Action</b></th>
+<th><b>Value</b> </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Delete</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Warn</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Timeout30m</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Timeout6h</td>
+<td>3</td>
+</tr>
+<tr>
+<td>TimeoutIndefinitely</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Kick</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Ban7d</td>
+<td>6</td>
+</tr>
+<tr>
+<td>BanPern</td>
+<td>7</td>
+</tr>
+</tbody>
+</table>
+</div>
+   </doc-panel>
+   <doc-panel id="example-response" collapsed>
+       <template #title>Example response</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-json"><code v-pre class="language-json">[
+    {
+        &quot;term&quot;: &quot;badword1&quot;,
+        &quot;action&quot;: 0
+    },
+    {
+        &quot;term&quot;: &quot;badword2&quot;,
+        &quot;action&quot;: 1
+    },
+    {
+        &quot;term&quot;: &quot;badword3&quot;,
+        &quot;action&quot;: 2
+    }
+]</code></pre>
+</doc-codeblock></div>
+   </doc-panel>
+</doc-panels>
+<hr>
+<div class="api-container-parent">
+    <span class="api-method-post">POST</span>
+    <span class="api-container-text">https://liege.dev/api<b>/censor?guildid={guildid}</b></span>
+</div>
+<br>
+<doc-panels>
+   <doc-panel id="example-request" collapsed>
+       <template #title>Example request</template>
+<doc-tabs>
+<doc-tab v-cloak id="curl">
+<template #title>cURL</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">curl https://liege.dev/api/censors?guildid={guildid} \
+    --header &quot;Authorization: Bearer BEARER_TOKEN&quot; \
+    --header &quot;Content-Type: application/json&quot; \
+    --request POST \
+    --data '{ &quot;terms&quot;: [&quot;badword1&quot;, &quot;badword2&quot;, &quot;badword3&quot;], &quot;action&quot;: 2 }'</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="c">
+<template #title>C#</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-csharp"><code v-pre class="language-csharp">using System.Net.Http;
+using System.Net.Http.Headers;
+
+HttpClient client = new HttpClient();
+
+HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, &quot;https://liege.dev/api/censors?guildid={guildid}&quot;);
+
+request.Headers.Add(&quot;Authorization&quot;, &quot;Bearer BEARER_TOKEN&quot;);
+
+request.Content = new StringContent(&quot;{ \&quot;terms\&quot;: [\&quot;badword1\&quot;, \&quot;badword2\&quot;, \&quot;badword3\&quot;], \&quot;action\&quot;: 2 }&quot;);
+request.Content.Headers.ContentType = new MediaTypeHeaderValue(&quot;application/json&quot;);
+
+HttpResponseMessage response = await client.SendAsync(request);
+response.EnsureSuccessStatusCode();
+string responseBody = await response.Content.ReadAsStringAsync();</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="js">
+<template #title>JS</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-javascript"><code v-pre class="language-javascript">fetch(&quot;https://liege.dev/api/censors?guildid={guildid}&quot;, {
+    method: &quot;POST&quot;,
+    headers: {
+        Authorization: &quot;Bearer BEARER_TOKEN&quot;,
+        &quot;Content-Type&quot;: &quot;application/json&quot;,
+    },
+    // body: '{ &quot;terms&quot;: [&quot;badword1&quot;, &quot;badword2&quot;, &quot;badword3&quot;], &quot;action&quot;: 2 }',
+    body: JSON.stringify({
+        terms: [&quot;badword1&quot;, &quot;badword2&quot;, &quot;badword3&quot;],
+        action: 2,
+    }),
+});</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="python">
+<template #title>Python</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">import requests
+
+headers = {
+    'Authorization': 'Bearer BEARER_TOKEN',
+    'Content-Type': 'application/json',
+}
+
+json_data = {
+    'terms': [
+        'badword1',
+        'badword2',
+        'badword3',
+    ],
+    'action': 2,
+}
+
+response = requests.post('https://liege.dev/api/censors?guildid={guildid}', headers=headers, json=json_data)</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="java">
+<template #title>Java</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-java"><code v-pre class="language-java">import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpRequest.BodyPublishers;
+import java.net.http.HttpResponse;
+
+HttpClient client = HttpClient.newHttpClient();
+
+HttpRequest request = HttpRequest.newBuilder()
+    .uri(URI.create(&quot;https://liege.dev/api/censors?guildid={guildid}&quot;))
+    .POST(BodyPublishers.ofString(&quot;{ \&quot;terms\&quot;: [\&quot;badword1\&quot;, \&quot;badword2\&quot;, \&quot;badword3\&quot;], \&quot;action\&quot;: 2 }&quot;))
+    .setHeader(&quot;Authorization&quot;, &quot;Bearer BEARER_TOKEN&quot;)
+    .setHeader(&quot;Content-Type&quot;, &quot;application/json&quot;)
+    .build();
+
+HttpResponse&lt;String&gt; response = client.send(request, HttpResponse.BodyHandlers.ofString());</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+</doc-tabs>
+   </doc-panel>
+   <doc-panel id="request-body" collapsed>
+       <template #title>Request body</template>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="compact">
+<thead>
+<tr>
+<th><b>Name</b></th>
+<th><b>Type</b></th>
+<th><b>Description</b> </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>terms</td>
+<td><code v-pre>string[]</code></td>
+<td>The terms to be added to the provided guild.</td>
+</tr>
+<tr>
+<td>action</td>
+<td><code v-pre>int</code></td>
+<td>The action to be taken automatically upon a censored term being identified.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="autoaction-1">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#autoaction-1">#</doc-anchor-trigger>
+        <span>AutoAction</span>
+    </h5>
+</doc-anchor-target>
+<br>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="compact">
+<thead>
+<tr>
+<th><b>Action</b></th>
+<th><b>Value</b> </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Delete</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Warn</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Timeout30m</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Timeout6h</td>
+<td>3</td>
+</tr>
+<tr>
+<td>TimeoutIndefinitely</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Kick</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Ban7d</td>
+<td>6</td>
+</tr>
+<tr>
+<td>BanPern</td>
+<td>7</td>
+</tr>
+</tbody>
+</table>
+</div>
+   </doc-panel>
+</doc-panels>
+<hr>
+<div class="api-container-parent">
+    <span class="api-method-delete">DELETE</span>
+    <span class="api-container-text">https://liege.dev/api<b>/censor?guildid={guildid}</b></span>
+</div>
+<br>
+<doc-panels>
+   <doc-panel id="example-request" collapsed>
+       <template #title>Example request</template>
+<doc-tabs>
+<doc-tab v-cloak id="curl">
+<template #title>cURL</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">curl https://liege.dev/api/regex?guildid={guildid} \
+    --header &quot;Authorization: Bearer BEARER_TOKEN&quot; \
+    --header &quot;Content-Type: application/json&quot; \
+    --request DELETE \
+    --data '{ &quot;terms&quot;: [&quot;badword1&quot;, &quot;badword2&quot;, &quot;badword3&quot;] }'</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="c">
+<template #title>C#</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-csharp"><code v-pre class="language-csharp">using System.Net.Http;
+using System.Net.Http.Headers;
+
+HttpClient client = new HttpClient();
+
+HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Delete, &quot;https://liege.dev/api/regex?guildid={guildid}&quot;);
+
+request.Headers.Add(&quot;Authorization&quot;, &quot;Bearer BEARER_TOKEN&quot;);
+
+request.Content = new StringContent(&quot;{ \&quot;terms\&quot;: [\&quot;badword1\&quot;, \&quot;badword2\&quot;, \&quot;badword3\&quot;] }&quot;);
+request.Content.Headers.ContentType = new MediaTypeHeaderValue(&quot;application/json&quot;);
+
+HttpResponseMessage response = await client.SendAsync(request);
+response.EnsureSuccessStatusCode();
+string responseBody = await response.Content.ReadAsStringAsync();
+</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="js">
+<template #title>JS</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-javascript"><code v-pre class="language-javascript">fetch(&quot;https://liege.dev/api/regex?guildid={guildid}&quot;, {
+    method: &quot;DELETE&quot;,
+    headers: {
+        Authorization: &quot;Bearer BEARER_TOKEN&quot;,
+        &quot;Content-Type&quot;: &quot;application/json&quot;,
+    },
+    // body: '{ &quot;terms&quot;: [&quot;badword1&quot;, &quot;badword2&quot;, &quot;badword3&quot;] }',
+    body: JSON.stringify({
+        terms: [&quot;badword1&quot;, &quot;badword2&quot;, &quot;badword3&quot;],
+    }),
+});</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="python">
+<template #title>Python</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">import requests
+
+headers = {
+    'Authorization': 'Bearer BEARER_TOKEN',
+    'Content-Type': 'application/json',
+}
+
+json_data = {
+    'terms': [
+        'badword1',
+        'badword2',
+        'badword3',
+    ],
+}
+
+response = requests.delete('https://liege.dev/api/regex?guildid={guildid}', headers=headers, json=json_data)
+
+# Note: json_data will not be serialized by requests
+# exactly as it was in the original request.
+#data = '{ &quot;terms&quot;: [&quot;badword1&quot;, &quot;badword2&quot;, &quot;badword3&quot;] }'
+#response = requests.delete('https://liege.dev/api/regex?guildid={guildid}', headers=headers, data=data)
+</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="java">
+<template #title>Java</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-java"><code v-pre class="language-java">import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpRequest.BodyPublishers;
+import java.net.http.HttpResponse;
+
+HttpClient client = HttpClient.newHttpClient();
+
+HttpRequest request = HttpRequest.newBuilder()
+    .uri(URI.create(&quot;https://liege.dev/api/regex?guildid={guildid}&quot;))
+    .method(&quot;DELETE&quot;, BodyPublishers.ofString(&quot;{ \&quot;terms\&quot;: [\&quot;badword1\&quot;, \&quot;badword2\&quot;, \&quot;badword3\&quot;] }&quot;))
+    .setHeader(&quot;Authorization&quot;, &quot;Bearer BEARER_TOKEN&quot;)
+    .setHeader(&quot;Content-Type&quot;, &quot;application/json&quot;)
+    .build();
+
+HttpResponse&lt;String&gt; response = client.send(request, HttpResponse.BodyHandlers.ofString());
+</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+</doc-tabs>
+   </doc-panel>
+   <doc-panel id="request-body" collapsed>
+       <template #title>Request body</template>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="compact">
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>terms</td>
+<td>string[]</td>
+<td>The terms to be deleted from the provided guild.</td>
+</tr>
+</tbody>
+</table>
+</div>
+   </doc-panel>
+</doc-panels>
 
                                 
                                 <!-- Required only on API pages -->
@@ -246,20 +672,20 @@
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../commands/moderation/censoring/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../api/errors/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Censoring Terms & Regex</span>
+                                                <span class="block mt-1">Errors</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../commands/moderation/reason/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../api/requests/regex/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Reason Shortcuts</span>
+                                                <span class="block mt-1">Regex censoring</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -303,6 +729,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Whitelisting", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Censoring", level: 3, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
