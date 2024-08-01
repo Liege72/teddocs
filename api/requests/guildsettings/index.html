@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.775619953140">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.775795368541">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -31,12 +31,12 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../../favicon.png" rel="icon">
-    <link href="../../../resources/css/retype.css?v=3.5.0.775619953140" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.775795368541" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.775619953140" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.775795368541" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.775619953140" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.775619953140" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.775795368541" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.775795368541" defer></script>
 
     <style>
         .api-container-parent {
@@ -44,13 +44,13 @@
             flex-direction: row;
             align-items: center;
         }
-        
+
         .api-container-text {
             margin: 0;
             padding: 0;
             letter-spacing: 0.25px;
         }
-        
+
         [class^="api-method-"] {
             padding: 0px 10px;
             color: white;
@@ -58,25 +58,30 @@
             margin-right: 10px;
             border-radius: 50px;
         }
-        
+
         .api-method-post {
-            background-color: #3ba55d;
-        }
-        
-        .api-method-get {
             background-color: #ccb73f;
         }
-        
+
+        .api-method-get {
+            background-color: #3ba55d;
+        }
+
         .api-method-delete {
             background-color: #e53e3e;
         }
-        
+
+        .api-method-patch {
+            background-color: #9242ff;
+        }
+
         .tables11 {
             display: flex;
             flex-direction: row;
             margin-right: 100px;
         }
     </style>
+
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -203,74 +208,77 @@
 </doc-anchor-target>
 <div class="api-container-parent">
     <span class="api-method-get">GET</span>
-    <span class="api-container-text">https://liege.dev/api<b>/settings/getsetting</b></span>
+    <span class="api-container-text">https://liege.dev/api<b>/settings/setting?guildid={guildid}&setting={setting}</b></span>
 </div>
 <br>
 <doc-panels>
    <doc-panel id="example-request" collapsed>
        <template #title>Example request</template>
-<doc-tabs>
-<doc-tab v-cloak id="curl">
-<template #title>cURL</template>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">curl https://liege.dev/api/settings/getsetting \
-    --header &quot;Authorization: Bearer BEARER_TOKEN&quot; \
-    --header &quot;Content-Type: application/json&quot; \
-    --request GET \
-    --data '{ &quot;guildid&quot;: 000000000000000000, &quot;setting&quot;: 0 }'</code></pre>
+<pre class="language-none"><code v-pre class="language-none">curl https://liege.dev/api/settings/setting?guildid={guildid}&amp;setting={setting} \
+    --header &quot;Authorization: Bearer BEARER_TOKEN&quot; \</code></pre>
 </doc-codeblock></div>
-</doc-tab>
-<doc-tab v-cloak id="c">
-<template #title>C#</template>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-csharp"><code v-pre class="language-csharp">using System.Net.Http;
+<!-- +++ cURL
+
+```sh
+curl https://liege.dev/api/settings/setting \
+    --header "Authorization: Bearer BEARER_TOKEN" \
+    --header "Content-Type: application/json" \
+    --request GET \
+    --data '{ "guildid": 000000000000000000, "setting": 0 }'
+```
+
++++ C#
+
+```c#
+using System.Net.Http;
 using System.Net.Http.Headers;
 
 HttpClient client = new HttpClient();
 
-HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, &quot;https://liege.dev/api/settings/getsetting&quot;);
+HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, "https://liege.dev/api/settings/getsetting");
 
-request.Headers.Add(&quot;Authorization&quot;, &quot;Bearer BEARER_TOKEN&quot;);
+request.Headers.Add("Authorization", "Bearer BEARER_TOKEN");
 
-request.Content = new StringContent(&quot;{ \&quot;guildid\&quot;: 000000000000000000, \&quot;setting\&quot;: 0 }&quot;);
-request.Content.Headers.ContentType = new MediaTypeHeaderValue(&quot;application/json&quot;);
+request.Content = new StringContent("{ \"guildid\": 000000000000000000, \"setting\": 0 }");
+request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
 HttpResponseMessage response = await client.SendAsync(request);
 response.EnsureSuccessStatusCode();
-string responseBody = await response.Content.ReadAsStringAsync();</code></pre>
-</doc-codeblock></div>
-</doc-tab>
-<doc-tab v-cloak id="js">
-<template #title>JS</template>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-javascript"><code v-pre class="language-javascript">fetch(&quot;https://liege.dev/api/settings/getsetting&quot;, {
+string responseBody = await response.Content.ReadAsStringAsync();
+```
+
++++ JS
+
+```js
+fetch("https://liege.dev/api/settings/getsetting", {
     headers: {
-        Authorization: &quot;Bearer BEARER_TOKEN&quot;,
-        &quot;Content-Type&quot;: &quot;application/json&quot;,
+        Authorization: "Bearer BEARER_TOKEN",
+        "Content-Type": "application/json",
     },
-    body: '{ &quot;guildid&quot;: 000000000000000000, &quot;setting&quot;: 0 }',
-});</code></pre>
-</doc-codeblock></div>
-</doc-tab>
-<doc-tab v-cloak id="python">
-<template #title>Python</template>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">import requests
+    body: '{ "guildid": 000000000000000000, "setting": 0 }',
+});
+```
+
++++ Python
+
+```py
+import requests
 
 headers = {
     'Authorization': 'Bearer BEARER_TOKEN',
     'Content-Type': 'application/json',
 }
 
-data = '{ &quot;guildid&quot;: 000000000000000000, &quot;setting&quot;: 0 }'
+data = '{ "guildid": 000000000000000000, "setting": 0 }'
 
-response = requests.get('https://liege.dev/api/settings/getsetting', headers=headers, data=data)</code></pre>
-</doc-codeblock></div>
-</doc-tab>
-<doc-tab v-cloak id="java">
-<template #title>Java</template>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-java"><code v-pre class="language-java">import java.io.IOException;
+response = requests.get('https://liege.dev/api/settings/getsetting', headers=headers, data=data)
+```
+
++++ Java
+
+```java
+import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -280,16 +288,16 @@ import java.net.http.HttpResponse;
 HttpClient client = HttpClient.newHttpClient();
 
 HttpRequest request = HttpRequest.newBuilder()
-    .uri(URI.create(&quot;https://liege.dev/api/settings/getsetting&quot;))
-    .method(&quot;GET&quot;, BodyPublishers.ofString(&quot;{ \&quot;guildid\&quot;: 000000000000000000, \&quot;setting\&quot;: 0 }&quot;))
-    .setHeader(&quot;Authorization&quot;, &quot;Bearer BEARER_TOKEN&quot;)
-    .setHeader(&quot;Content-Type&quot;, &quot;application/json&quot;)
+    .uri(URI.create("https://liege.dev/api/settings/getsetting"))
+    .method("GET", BodyPublishers.ofString("{ \"guildid\": 000000000000000000, \"setting\": 0 }"))
+    .setHeader("Authorization", "Bearer BEARER_TOKEN")
+    .setHeader("Content-Type", "application/json")
     .build();
 
-HttpResponse&lt;String&gt; response = client.send(request, HttpResponse.BodyHandlers.ofString());</code></pre>
-</doc-codeblock></div>
-</doc-tab>
-</doc-tabs>
+HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+```
+
++++ -->
    </doc-panel>
    <doc-panel id="request-body" collapsed>
        <template #title>Request body</template>
@@ -306,12 +314,12 @@ HttpResponse&lt;String&gt; response = client.send(request, HttpResponse.BodyHand
 <tr>
 <td>guildid</td>
 <td><code v-pre>string</code></td>
-<td>The Discord guild ID of the guild to be retrieved.</td>
+<td>The Discord guild ID of the guild to be modified.</td>
 </tr>
 <tr>
 <td>setting</td>
 <td><code v-pre>int</code></td>
-<td>The Discord channel ID of the channel to be set to receive modlogs.</td>
+<td>The setting to be retrieved in integer form.</td>
 </tr>
 </tbody>
 </table>
@@ -359,6 +367,19 @@ HttpResponse&lt;String&gt; response = client.send(request, HttpResponse.BodyHand
 </tbody>
 </table>
 </div>
+<doc-anchor-target id="example">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example">#</doc-anchor-trigger>
+        <span>Example</span>
+    </h5>
+</doc-anchor-target>
+<br>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-json"><code v-pre class="language-json">{
+    &quot;guildid&quot;: &quot;000000000000000000&quot;,
+    &quot;setting&quot;: &quot;0&quot;
+}</code></pre>
+</doc-codeblock></div>
    </doc-panel>
    <doc-panel id="example-response" collapsed>
        <template #title>Example response</template>
@@ -424,76 +445,82 @@ HttpResponse&lt;String&gt; response = client.send(request, HttpResponse.BodyHand
 </doc-panels>
 <hr>
 <div class="api-container-parent">
-    <span class="api-method-post">POST</span>
-    <span class="api-container-text">https://liege.dev/api<b>/settings/setsetting</b></span>
+    <span class="api-method-patch">PATCH</span>
+    <span class="api-container-text">https://liege.dev/api<b>/settings/setting</b></span>
 </div>
 <br>
 <doc-panels>
    <doc-panel id="example-request" collapsed>
        <template #title>Example request</template>
-<doc-tabs>
-<doc-tab v-cloak id="curl">
-<template #title>cURL</template>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">curl https://liege.dev/api/settings/setsetting \
+<pre class="language-bash"><code v-pre class="language-bash">curl https://liege.dev/api/settings/setting \
     --header &quot;Authorization: Bearer BEARER_TOKEN&quot; \
     --header &quot;Content-Type: application/json&quot; \
-    --request POST \
-    --data '{ &quot;guildid&quot;: 000000000000000000, &quot;setting&quot;: 1, &quot;config&quot;: { &quot;isEnabled&quot;: true, &quot;action&quot;: 1, &quot;slowmodeInterval&quot;: 3 } }'</code></pre>
+    --request PATCH \
+    --data '{ &quot;guildid&quot;: &quot;000000000000000000&quot;, &quot;setting&quot;: 1, &quot;config&quot;: { &quot;isEnabled&quot;: true, &quot;action&quot;: 1, &quot;slowmodeInterval&quot;: 3 } }'</code></pre>
 </doc-codeblock></div>
-</doc-tab>
-<doc-tab v-cloak id="c">
-<template #title>C#</template>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-csharp"><code v-pre class="language-csharp">using System.Net.Http;
+<!-- +++ cURL
+
+```sh
+curl https://liege.dev/api/settings/setsetting \
+    --header "Authorization: Bearer BEARER_TOKEN" \
+    --header "Content-Type: application/json" \
+    --request POST \
+    --data '{ "guildid": 000000000000000000, "setting": 1, "config": { "isEnabled": true, "action": 1, "slowmodeInterval": 3 } }'
+```
+
++++ C#
+
+```c#
+using System.Net.Http;
 using System.Net.Http.Headers;
 
 HttpClient client = new HttpClient();
 
-HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, &quot;https://liege.dev/api/settings/setsetting&quot;);
+HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, "https://liege.dev/api/settings/setsetting");
 
-request.Headers.Add(&quot;Authorization&quot;, &quot;Bearer BEARER_TOKEN&quot;);
+request.Headers.Add("Authorization", "Bearer BEARER_TOKEN");
 
-request.Content = new StringContent(&quot;{ \&quot;guildid\&quot;: 000000000000000000, \&quot;setting\&quot;: 1, \&quot;config\&quot;: { \&quot;isEnabled\&quot;: true, \&quot;action\&quot;: 1, \&quot;slowmodeInterval\&quot;: 3 } }&quot;);
-request.Content.Headers.ContentType = new MediaTypeHeaderValue(&quot;application/json&quot;);
+request.Content = new StringContent("{ \"guildid\": 000000000000000000, \"setting\": 1, \"config\": { \"isEnabled\": true, \"action\": 1, \"slowmodeInterval\": 3 } }");
+request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
 HttpResponseMessage response = await client.SendAsync(request);
 response.EnsureSuccessStatusCode();
-string responseBody = await response.Content.ReadAsStringAsync();</code></pre>
-</doc-codeblock></div>
-</doc-tab>
-<doc-tab v-cloak id="js">
-<template #title>JS</template>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-javascript"><code v-pre class="language-javascript">fetch(&quot;https://liege.dev/api/settings/setsetting&quot;, {
-    method: &quot;POST&quot;,
+string responseBody = await response.Content.ReadAsStringAsync();
+```
+
++++ JS
+
+```js
+fetch("https://liege.dev/api/settings/setsetting", {
+    method: "POST",
     headers: {
-        Authorization: &quot;Bearer BEARER_TOKEN&quot;,
-        &quot;Content-Type&quot;: &quot;application/json&quot;,
+        Authorization: "Bearer BEARER_TOKEN",
+        "Content-Type": "application/json",
     },
-    body: '{ &quot;guildid&quot;: 000000000000000000, &quot;setting&quot;: 1, &quot;config&quot;: { &quot;isEnabled&quot;: true, &quot;action&quot;: 1, &quot;slowmodeInterval&quot;: 3 } }',
-});</code></pre>
-</doc-codeblock></div>
-</doc-tab>
-<doc-tab v-cloak id="python">
-<template #title>Python</template>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">import requests
+    body: '{ "guildid": 000000000000000000, "setting": 1, "config": { "isEnabled": true, "action": 1, "slowmodeInterval": 3 } }',
+});
+```
+
++++ Python
+
+```py
+import requests
 
 headers = {
     'Authorization': 'Bearer BEARER_TOKEN',
     'Content-Type': 'application/json',
 }
 
-data = '{ &quot;guildid&quot;: 000000000000000000, &quot;setting&quot;: 1, &quot;config&quot;: { &quot;isEnabled&quot;: true, &quot;action&quot;: 1, &quot;slowmodeInterval&quot;: 3 } }'
+data = '{ "guildid": 000000000000000000, "setting": 1, "config": { "isEnabled": true, "action": 1, "slowmodeInterval": 3 } }'
 
-response = requests.post('https://liege.dev/api/settings/setsetting', headers=headers, data=data)</code></pre>
-</doc-codeblock></div>
-</doc-tab>
-<doc-tab v-cloak id="java">
-<template #title>Java</template>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-java"><code v-pre class="language-java">import java.io.IOException;
+response = requests.post('https://liege.dev/api/settings/setsetting', headers=headers, data=data)
+```
+
++++ Java
+
+```java
+import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -503,16 +530,16 @@ import java.net.http.HttpResponse;
 HttpClient client = HttpClient.newHttpClient();
 
 HttpRequest request = HttpRequest.newBuilder()
-    .uri(URI.create(&quot;https://liege.dev/api/settings/setsetting&quot;))
-    .POST(BodyPublishers.ofString(&quot;{ \&quot;guildid\&quot;: 000000000000000000, \&quot;setting\&quot;: 1, \&quot;config\&quot;: { \&quot;isEnabled\&quot;: true, \&quot;action\&quot;: 1, \&quot;slowmodeInterval\&quot;: 3 } }&quot;))
-    .setHeader(&quot;Authorization&quot;, &quot;Bearer BEARER_TOKEN&quot;)
-    .setHeader(&quot;Content-Type&quot;, &quot;application/json&quot;)
+    .uri(URI.create("https://liege.dev/api/settings/setsetting"))
+    .POST(BodyPublishers.ofString("{ \"guildid\": 000000000000000000, \"setting\": 1, \"config\": { \"isEnabled\": true, \"action\": 1, \"slowmodeInterval\": 3 } }"))
+    .setHeader("Authorization", "Bearer BEARER_TOKEN")
+    .setHeader("Content-Type", "application/json")
     .build();
 
-HttpResponse&lt;String&gt; response = client.send(request, HttpResponse.BodyHandlers.ofString());</code></pre>
-</doc-codeblock></div>
-</doc-tab>
-</doc-tabs>
+HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+```
+
++++ -->
    </doc-panel>
    <doc-panel id="request-body" collapsed>
        <template #title>Request body</template>
@@ -529,16 +556,16 @@ HttpResponse&lt;String&gt; response = client.send(request, HttpResponse.BodyHand
 <tr>
 <td>guildid</td>
 <td><code v-pre>string</code></td>
-<td>The Discord guild ID of the guild to be retrieved.</td>
+<td>The Discord guild ID of the guild to be modified.</td>
 </tr>
 <tr>
 <td>setting</td>
 <td><code v-pre>int</code></td>
-<td>The Discord channel ID of the channel to be set to receive modlogs.</td>
+<td>The setting to be modified in integer form.</td>
 </tr>
 <tr>
 <td>config</td>
-<td><code v-pre>object</code></td>
+<td><code v-pre>config</code></td>
 <td>The new settings that are to be set in the provided guild. See the <code v-pre>config</code> object below.</td>
 </tr>
 </tbody>
@@ -674,6 +701,25 @@ HttpResponse&lt;String&gt; response = client.send(request, HttpResponse.BodyHand
 </tbody>
 </table>
 </div>
+<hr>
+<doc-anchor-target id="example-1">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-1">#</doc-anchor-trigger>
+        <span>Example</span>
+    </h5>
+</doc-anchor-target>
+<br>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-json"><code v-pre class="language-json">{
+    &quot;guildid&quot;: &quot;000000000000000000&quot;,
+    &quot;setting&quot;: 1,
+    &quot;config&quot;: {
+        &quot;isEnabled&quot;: true,
+        &quot;action&quot;: 1,
+        &quot;slowmodeInterval&quot;: 3
+    }
+}</code></pre>
+</doc-codeblock></div>
    </doc-panel>
 </doc-panels>
 
