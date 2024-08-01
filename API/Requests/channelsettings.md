@@ -5,14 +5,23 @@ order: 80
 ---
 
 <div class="api-container-parent">
-    <span class="api-method-post">POST</span>
-    <span class="api-container-text">https://liege.dev/api<b>/settings/setmodlogchannel</b></span>
+    <span class="api-method-patch">PATCH</span>
+    <span class="api-container-text">https://liege.dev/api<b>/settings/channels/modlog</b></span>
 </div>
 
 <br>
 
 ==- Example request
-+++ cURL
+
+```sh
+curl https://liege.dev/api/settings/channels/modlog \
+    --header "Authorization: Bearer BEARER_TOKEN" \
+    --header "Content-Type: application/json" \
+    --request PATCH \
+    --data '{ "guildid": "000000000000000000", "channelid": "000000000000000000" }'
+```
+
+<!-- +++ cURL
 
 ```sh
 curl https://liege.dev/api/settings/setmodlogchannel \
@@ -92,26 +101,47 @@ HttpRequest request = HttpRequest.newBuilder()
 HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 ```
 
-+++
++++ -->
 
 ==- Request body
 | <b>Name</b> | <b>Type</b> | <b>Description</b> {.compact} |
 | ----------- | ----------- | ------------------------------------------------------------------- |
 | guildid | `string` | The Discord guild ID of the guild to be modified. |
 | channelid | `string` | The Discord channel ID of the channel to be set to receive modlogs. |
+
+##### Example
+
+<br>
+
+```json
+{
+    "guildid": "000000000000000000",
+    "channelid": "000000000000000000"
+}
+```
+
 ===
 
 ---
 
 <div class="api-container-parent">
-    <span class="api-method-post">POST</span>
-    <span class="api-container-text">https://liege.dev/api<b>/settings/seteventslogchannel</b></span>
+    <span class="api-method-patch">PATCH</span>
+    <span class="api-container-text">https://liege.dev/api<b>/settings/channels/eventlog</b></span>
 </div>
 
 <br>
 
 ==- Example request
-+++ cURL
+
+```sh
+curl https://liege.dev/api/settings/channels/eventlog \
+    --header "Authorization: Bearer BEARER_TOKEN" \
+    --header "Content-Type: application/json" \
+    --request PATCH \
+    --data '{ "guildid": "000000000000000000", "channelid": "000000000000000000" }'
+```
+
+<!-- +++ cURL
 
 ```sh
 curl https://liege.dev/api/settings/seteventslogchannel \
@@ -191,11 +221,23 @@ HttpRequest request = HttpRequest.newBuilder()
 HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 ```
 
-+++
++++ -->
 
 ==- Request body
 | <b>Name</b> | <b>Type</b> | <b>Description</b> {.compact} |
 | ----------- | ----------- | ---------------------------------------------------------------------------- |
 | guildid | `string` | The Discord guild ID of the guild to be modified. |
 | channelid | `string` | The Discord channel ID of the channel to be set to receive guild event logs. |
+
+##### Example
+
+<br>
+
+```json
+{
+    "guildid": "000000000000000000",
+    "channelid": "000000000000000000"
+}
+```
+
 ===

@@ -6,16 +6,22 @@ order: 70
 
 <div class="api-container-parent">
     <span class="api-method-get">GET</span>
-    <span class="api-container-text">https://liege.dev/api<b>/settings/getsetting</b></span>
+    <span class="api-container-text">https://liege.dev/api<b>/settings/setting?guildid={guildid}&setting={setting}</b></span>
 </div>
 
 <br>
 
 ==- Example request
-+++ cURL
+
+```
+curl https://liege.dev/api/settings/setting?guildid={guildid}&setting={setting} \
+    --header "Authorization: Bearer BEARER_TOKEN" \
+```
+
+<!-- +++ cURL
 
 ```sh
-curl https://liege.dev/api/settings/getsetting \
+curl https://liege.dev/api/settings/setting \
     --header "Authorization: Bearer BEARER_TOKEN" \
     --header "Content-Type: application/json" \
     --request GET \
@@ -91,14 +97,14 @@ HttpRequest request = HttpRequest.newBuilder()
 HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 ```
 
-+++
++++ -->
 
 ==- Request body
 
-| <b>Name</b> | <b>Type</b> | <b>Description</b> {.compact}                                       |
-| ----------- | ----------- | ------------------------------------------------------------------- |
-| guildid     | `string`    | The Discord guild ID of the guild to be retrieved.                  |
-| setting     | `int`       | The Discord channel ID of the channel to be set to receive modlogs. |
+| <b>Name</b> | <b>Type</b> | <b>Description</b> {.compact}                     |
+| ----------- | ----------- | ------------------------------------------------- |
+| guildid     | `string`    | The Discord guild ID of the guild to be modified. |
+| setting     | `int`       | The setting to be retrieved in integer form.      |
 
 ##### Setting
 
@@ -112,6 +118,17 @@ HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.o
 | DOX            | 3                       |
 | AI             | 4                       |
 | Raid           | 5                       |
+
+##### Example
+
+<br>
+
+```json
+{
+    "guildid": "000000000000000000",
+    "setting": "0"
+}
+```
 
 ==- Example response
 
@@ -143,14 +160,23 @@ HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.o
 ---
 
 <div class="api-container-parent">
-    <span class="api-method-post">POST</span>
-    <span class="api-container-text">https://liege.dev/api<b>/settings/setsetting</b></span>
+    <span class="api-method-patch">PATCH</span>
+    <span class="api-container-text">https://liege.dev/api<b>/settings/setting</b></span>
 </div>
 
 <br>
 
 ==- Example request
-+++ cURL
+
+```sh
+curl https://liege.dev/api/settings/setting \
+    --header "Authorization: Bearer BEARER_TOKEN" \
+    --header "Content-Type: application/json" \
+    --request PATCH \
+    --data '{ "guildid": "000000000000000000", "setting": 1, "config": { "isEnabled": true, "action": 1, "slowmodeInterval": 3 } }'
+```
+
+<!-- +++ cURL
 
 ```sh
 curl https://liege.dev/api/settings/setsetting \
@@ -230,15 +256,15 @@ HttpRequest request = HttpRequest.newBuilder()
 HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 ```
 
-+++
++++ -->
 
 ==- Request body
 
 | <b>Name</b> | <b>Type</b> | <b>Description</b> {.compact}                                                             |
 | ----------- | ----------- | ----------------------------------------------------------------------------------------- |
-| guildid     | `string`    | The Discord guild ID of the guild to be retrieved.                                        |
-| setting     | `int`       | The Discord channel ID of the channel to be set to receive modlogs.                       |
-| config      | `object`    | The new settings that are to be set in the provided guild. See the `config` object below. |
+| guildid     | `string`    | The Discord guild ID of the guild to be modified.                                         |
+| setting     | `int`       | The setting to be modified in integer form.                                               |
+| config      | `config`    | The new settings that are to be set in the provided guild. See the `config` object below. |
 
 ##### `config` object
 
@@ -279,5 +305,23 @@ HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.o
 | Kick                | 5                       |
 | Ban7d               | 6                       |
 | BanPern             | 7                       |
+
+---
+
+##### Example
+
+<br>
+
+```json
+{
+    "guildid": "000000000000000000",
+    "setting": 1,
+    "config": {
+        "isEnabled": true,
+        "action": 1,
+        "slowmodeInterval": 3
+    }
+}
+```
 
 ===

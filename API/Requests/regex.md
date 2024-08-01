@@ -12,7 +12,13 @@ order: 90
 <br>
 
 ==- Example request
-+++ cURL
+
+```sh
+curl https://liege.dev/api/regex?guildid={guildid} \
+    --header "Authorization: Bearer BEARER_TOKEN"
+```
+
+<!-- +++ cURL
 
 ```sh
 curl https://liege.dev/api/regex?guildid={guildid} \
@@ -77,8 +83,9 @@ HttpRequest request = HttpRequest.newBuilder()
 HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 ```
 
-+++
-==- Request body
++++ -->
+
+<!-- ==- Request body
 
 ##### AutoAction
 
@@ -93,7 +100,7 @@ HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.o
 | TimeoutIndefinitely | 4                       |
 | Kick                | 5                       |
 | Ban7d               | 6                       |
-| BanPern             | 7                       |
+| BanPern             | 7                       | -->
 
 ==- Example response
 
@@ -116,20 +123,29 @@ HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.o
 
 <div class="api-container-parent">
     <span class="api-method-post">POST</span>
-    <span class="api-container-text">https://liege.dev/api<b>/regex?guildid={guildid}</b></span>
+    <span class="api-container-text">https://liege.dev/api<b>/regex</b></span>
 </div>
 
 <br>
 
 ==- Example request
-+++ cURL
+
+```sh
+curl https://liege.dev/api/regex \
+    --header "Authorization: Bearer BEARER_TOKEN" \
+    --header "Content-Type: application/json" \
+    --request POST \
+    --data '{ "guildid": "000000000000000000", "statement": "regexstatement1", "action": 2 }'
+```
+
+<!-- +++ cURL
 
 ```sh
 curl https://liege.dev/api/regex?guildid={guildid} \
     --header "Authorization: Bearer BEARER_TOKEN" \
     --header "Content-Type: application/json" \
     --request POST \
-    --data '{ "statement": "regexstatement1", "action": 2 }'
+    --data '{ "guildid": "000000000000000000", "statement": "regexstatement1", "action": 2 }'
 ```
 
 +++ C#
@@ -214,11 +230,12 @@ HttpRequest request = HttpRequest.newBuilder()
 HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 ```
 
-+++
++++ -->
 
 ==- Request body
 | <b>Name</b> | <b>Type</b> | <b>Description</b> {.compact} |
 | ----------- | ----------- | --------------------------------------------------------------------------- |
+| guildid | `string` | The Discord ID of the guild the regex statement is to be added to. |
 | statement | `string` | The regex statement to be added to the provided guild. |
 | action | `int` | The action to be taken automatically upon a regex statement being identified. |
 
@@ -237,26 +254,47 @@ HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.o
 | Ban7d               | 6                       |
 | BanPern             | 7                       |
 
+##### Example
+
+<br>
+
+```json
+{
+    "guildid": "000000000000000000",
+    "statement": "regexstatement1",
+    "action": 2
+}
+```
+
 ===
 
 ---
 
 <div class="api-container-parent">
     <span class="api-method-delete">DELETE</span>
-    <span class="api-container-text">https://liege.dev/api<b>/regex?guildid={guildid}</b></span>
+    <span class="api-container-text">https://liege.dev/api<b>/regex</b></span>
 </div>
 
 <br>
 
 ==- Example request
-+++ cURL
+
+```sh
+curl https://liege.dev/api/regex \
+    --header "Authorization: Bearer BEARER_TOKEN" \
+    --header "Content-Type: application/json" \
+    --request DELETE \
+    --data '{ "guildid": "000000000000000000", "statement": "regexstatement1" }'
+```
+
+<!-- +++ cURL
 
 ```sh
 curl https://liege.dev/api/regex?guildid={guildid} \
     --header "Authorization: Bearer BEARER_TOKEN" \
     --header "Content-Type: application/json" \
     --request DELETE \
-    --data '{ "statement": "regexstatement1" }'
+    --data '{ "guildid": "000000000000000000", "statement": "regexstatement1" }'
 ```
 
 +++ C#
@@ -342,12 +380,24 @@ HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.o
 
 ```
 
-+++
++++ -->
 
 ==- Request body
 
-| Name      | Type   | Description {.compact}                                     |
-| --------- | ------ | ---------------------------------------------------------- |
-| statement | string | The regex statement to be deleted from the provided guild. |
+| Name      | Type     | Description {.compact}                                           |
+| --------- | -------- | ---------------------------------------------------------------- |
+| guildid   | `string` | The Discord ID of the guild the censor(s) is/are to be added to. |
+| statement | `string` | The regex statement to be deleted from the provided guild.       |
+
+##### Example
+
+<br>
+
+```json
+{
+    "guildid": "000000000000000000",
+    "statement": "regexstatement1"
+}
+```
 
 ===

@@ -12,14 +12,16 @@ order: 100
 <br>
 
 ==- Example request
-+++ cURL
 
 ```sh
-curl https://liege.dev/api/censors?guildid={guildid} \
+curl https://liege.dev/api/censor?guildid={guildid} \
     --header "Authorization: Bearer BEARER_TOKEN"
 ```
 
-+++ C#
+<!--
++++ cURL
+
+ +++ C#
 
 ```c#
 using System.Net.Http;
@@ -77,8 +79,9 @@ HttpRequest request = HttpRequest.newBuilder()
 HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 ```
 
-+++
-==- Request body
++++-->
+
+<!-- ==- Request body
 
 ##### AutoAction
 
@@ -93,7 +96,7 @@ HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.o
 | TimeoutIndefinitely | 4                       |
 | Kick                | 5                       |
 | Ban7d               | 6                       |
-| BanPern             | 7                       |
+| BanPern             | 7                       | -->
 
 ==- Example response
 
@@ -120,16 +123,25 @@ HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.o
 
 <div class="api-container-parent">
     <span class="api-method-post">POST</span>
-    <span class="api-container-text">https://liege.dev/api<b>/censor?guildid={guildid}</b></span>
+    <span class="api-container-text">https://liege.dev/api<b>/censor</b></span>
 </div>
 
 <br>
 
 ==- Example request
-+++ cURL
 
 ```sh
-curl https://liege.dev/api/censors?guildid={guildid} \
+curl https://liege.dev/api/censor \
+    --header "Authorization: Bearer BEARER_TOKEN" \
+    --header "Content-Type: application/json" \
+    --request POST \
+    --data '{ "guildid": "000000000000000000", "terms": ["badword1", "badword2", "badword3"], "action": 2 }'
+```
+
+<!-- +++ cURL
+
+```sh
+curl https://liege.dev/api/censor?guildid={guildid} \
     --header "Authorization: Bearer BEARER_TOKEN" \
     --header "Content-Type: application/json" \
     --request POST \
@@ -217,13 +229,15 @@ HttpRequest request = HttpRequest.newBuilder()
 HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 ```
 
-+++
++++ -->
 
 ==- Request body
-| <b>Name</b> | <b>Type</b> | <b>Description</b> {.compact} |
+
+| <b>Name</b> | <b>Type</b> | <b>Description</b> {.compact}                                               |
 | ----------- | ----------- | --------------------------------------------------------------------------- |
-| terms | `string[]` | The terms to be added to the provided guild. |
-| action | `int` | The action to be taken automatically upon a censored term being identified. |
+| guildid     | `string`    | The Discord ID of the guild the censor(s) is/are to be added to.            |
+| terms       | `string[]`  | The terms to be added to the provided guild.                                |
+| action      | `int`       | The action to be taken automatically upon a censored term being identified. |
 
 ##### AutoAction
 
@@ -240,22 +254,43 @@ HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.o
 | Ban7d               | 6                       |
 | BanPern             | 7                       |
 
+##### Example
+
+<br>
+
+```json
+{
+    "guildid": "000000000000000000",
+    "terms": ["badword1", "badword2", "badword3"],
+    "action": 2
+}
+```
+
 ===
 
 ---
 
 <div class="api-container-parent">
     <span class="api-method-delete">DELETE</span>
-    <span class="api-container-text">https://liege.dev/api<b>/censor?guildid={guildid}</b></span>
+    <span class="api-container-text">https://liege.dev/api<b>/censor</b></span>
 </div>
 
 <br>
 
 ==- Example request
-+++ cURL
 
 ```sh
-curl https://liege.dev/api/regex?guildid={guildid} \
+curl https://liege.dev/api/censor \
+    --header "Authorization: Bearer BEARER_TOKEN" \
+    --header "Content-Type: application/json" \
+    --request DELETE \
+    --data '{ "guildid": "000000000000000000", "terms": ["badword1", "badword2", "badword3"] }'
+```
+
+<!-- +++ cURL
+
+```sh
+curl https://liege.dev/api/censor \
     --header "Authorization: Bearer BEARER_TOKEN" \
     --header "Content-Type: application/json" \
     --request DELETE \
@@ -349,12 +384,24 @@ HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.o
 
 ```
 
-+++
++++ -->
 
 ==- Request body
 
-| Name  | Type     | Description {.compact}                           |
-| ----- | -------- | ------------------------------------------------ |
-| terms | string[] | The terms to be deleted from the provided guild. |
+| Name    | Type       | Description {.compact}                                               |
+| ------- | ---------- | -------------------------------------------------------------------- |
+| guildid | `string`   | The Discord ID of the guild the censor(s) is/are to be removed from. |
+| terms   | `string[]` | The terms to be deleted from the provided guild.                     |
+
+##### Example
+
+<br>
+
+```json
+{
+    "guildid": "000000000000000000",
+    "terms": ["badword1", "badword2", "badword3"]
+}
+```
 
 ===
