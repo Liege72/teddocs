@@ -7,7 +7,7 @@ order: 100
 ### Base URL
 
 ```
-https://liege.dev/api
+https://api.liege.dev/
 ```
 
 ### Authentication Request
@@ -17,7 +17,7 @@ https://liege.dev/api
 The request below will return the token + users permissions for the provided guild.
 
 ```sh
-curl https://liege.dev/api/authcheck \
+curl https://api.liege.dev/authcheck \
   --header "Authorization: Bearer BEARER_TOKEN" \
   --header "GuildId: {guildid}"
 ```
@@ -27,7 +27,7 @@ curl https://liege.dev/api/authcheck \
 The request below will return the tokens validity; it only tells you if its a valid token, not if the tokens user has permissions anywhere.
 
 ```sh
-curl https://liege.dev/api/authcheck \
+curl https://api.liege.dev/authcheck \
   --header "Authorization: Bearer BEARER_TOKEN"
 ```
 

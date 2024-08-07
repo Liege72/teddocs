@@ -14,14 +14,14 @@ order: 90
 ==- Example request
 
 ```sh
-curl https://liege.dev/api/regex?guildid={guildid} \
+curl https://api.liege.dev/regex?guildid={guildid} \
     --header "Authorization: Bearer BEARER_TOKEN"
 ```
 
 <!-- +++ cURL
 
 ```sh
-curl https://liege.dev/api/regex?guildid={guildid} \
+curl https://api.liege.dev/regex?guildid={guildid} \
     --header "Authorization: Bearer BEARER_TOKEN"
 ```
 
@@ -32,7 +32,7 @@ using System.Net.Http;
 
 HttpClient client = new HttpClient();
 
-HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, "https://liege.dev/api/regex?guildid={guildid}");
+HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, "https://api.liege.dev/regex?guildid={guildid}");
 
 request.Headers.Add("Authorization", "Bearer BEARER_TOKEN");
 
@@ -44,7 +44,7 @@ string responseBody = await response.Content.ReadAsStringAsync();
 +++ JS
 
 ```js
-fetch("https://liege.dev/api/regex?guildid={guildid}", {
+fetch("https://api.liege.dev/regex?guildid={guildid}", {
     headers: {
         Authorization: "Bearer BEARER_TOKEN",
     },
@@ -60,7 +60,7 @@ headers = {
     'Authorization': 'Bearer BEARER_TOKEN',
 }
 
-response = requests.get('https://liege.dev/api/regex?guildid={guildid}', headers=headers)
+response = requests.get('https://api.liege.dev/regex?guildid={guildid}', headers=headers)
 ```
 
 +++ Java
@@ -75,7 +75,7 @@ import java.net.http.HttpResponse;
 HttpClient client = HttpClient.newHttpClient();
 
 HttpRequest request = HttpRequest.newBuilder()
-    .uri(URI.create("https://liege.dev/api/regex?guildid={guildid}"))
+    .uri(URI.create("https://api.liege.dev/regex?guildid={guildid}"))
     .GET()
     .setHeader("Authorization", "Bearer BEARER_TOKEN")
     .build();
@@ -131,7 +131,7 @@ HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.o
 ==- Example request
 
 ```sh
-curl https://liege.dev/api/regex \
+curl https://api.liege.dev/regex \
     --header "Authorization: Bearer BEARER_TOKEN" \
     --header "Content-Type: application/json" \
     --request POST \
@@ -141,7 +141,7 @@ curl https://liege.dev/api/regex \
 <!-- +++ cURL
 
 ```sh
-curl https://liege.dev/api/regex?guildid={guildid} \
+curl https://api.liege.dev/regex?guildid={guildid} \
     --header "Authorization: Bearer BEARER_TOKEN" \
     --header "Content-Type: application/json" \
     --request POST \
@@ -156,7 +156,7 @@ using System.Net.Http.Headers;
 
 HttpClient client = new HttpClient();
 
-HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, "https://liege.dev/api/regex?guildid={guildid}");
+HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, "https://api.liege.dev/regex?guildid={guildid}");
 
 request.Headers.Add("Authorization", "Bearer BEARER_TOKEN");
 
@@ -171,7 +171,7 @@ string responseBody = await response.Content.ReadAsStringAsync();
 +++ JS
 
 ```js
-fetch("https://liege.dev/api/regex?guildid={guildid}", {
+fetch("https://api.liege.dev/regex?guildid={guildid}", {
     method: "POST",
     headers: {
         Authorization: "Bearer BEARER_TOKEN",
@@ -200,12 +200,12 @@ json_data = {
     'action': 2,
 }
 
-response = requests.post('https://liege.dev/api/regex?guildid={guildid}', headers=headers, json=json_data)
+response = requests.post('https://api.liege.dev/regex?guildid={guildid}', headers=headers, json=json_data)
 
 # Note: json_data will not be serialized by requests
 # exactly as it was in the original request.
 #data = '{ "statement": "regexstatement1", "action": 2 }'
-#response = requests.post('https://liege.dev/api/regex?guildid={guildid}', headers=headers, data=data)
+#response = requests.post('https://api.liege.dev/regex?guildid={guildid}', headers=headers, data=data)
 ```
 
 +++ Java
@@ -221,7 +221,7 @@ import java.net.http.HttpResponse;
 HttpClient client = HttpClient.newHttpClient();
 
 HttpRequest request = HttpRequest.newBuilder()
-    .uri(URI.create("https://liege.dev/api/regex?guildid={guildid}"))
+    .uri(URI.create("https://api.liege.dev/regex?guildid={guildid}"))
     .POST(BodyPublishers.ofString("{ \"statement\": \"regexstatement1\", \"action\": 2 }"))
     .setHeader("Authorization", "Bearer BEARER_TOKEN")
     .setHeader("Content-Type", "application/json")
@@ -280,7 +280,7 @@ HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.o
 ==- Example request
 
 ```sh
-curl https://liege.dev/api/regex \
+curl https://api.liege.dev/regex \
     --header "Authorization: Bearer BEARER_TOKEN" \
     --header "Content-Type: application/json" \
     --request DELETE \
@@ -290,7 +290,7 @@ curl https://liege.dev/api/regex \
 <!-- +++ cURL
 
 ```sh
-curl https://liege.dev/api/regex?guildid={guildid} \
+curl https://api.liege.dev/regex?guildid={guildid} \
     --header "Authorization: Bearer BEARER_TOKEN" \
     --header "Content-Type: application/json" \
     --request DELETE \
@@ -305,7 +305,7 @@ using System.Net.Http.Headers;
 
 HttpClient client = new HttpClient();
 
-HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Delete, "https://liege.dev/api/regex?guildid={guildid}");
+HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Delete, "https://api.liege.dev/regex?guildid={guildid}");
 
 request.Headers.Add("Authorization", "Bearer BEARER_TOKEN");
 
@@ -321,7 +321,7 @@ string responseBody = await response.Content.ReadAsStringAsync();
 +++ JS
 
 ```js
-fetch("https://liege.dev/api/regex?guildid={guildid}", {
+fetch("https://api.liege.dev/regex?guildid={guildid}", {
     method: "DELETE",
     headers: {
         Authorization: "Bearer BEARER_TOKEN",
@@ -348,12 +348,12 @@ json_data = {
     'statement': 'regexstatement1',
 }
 
-response = requests.delete('https://liege.dev/api/regex?guildid={guildid}', headers=headers, json=json_data)
+response = requests.delete('https://api.liege.dev/regex?guildid={guildid}', headers=headers, json=json_data)
 
 # Note: json_data will not be serialized by requests
 # exactly as it was in the original request.
 #data = '{ "statement": "regexstatement1" }'
-#response = requests.delete('https://liege.dev/api/regex?guildid={guildid}', headers=headers, data=data)
+#response = requests.delete('https://api.liege.dev/regex?guildid={guildid}', headers=headers, data=data)
 
 ```
 
@@ -370,7 +370,7 @@ import java.net.http.HttpResponse;
 HttpClient client = HttpClient.newHttpClient();
 
 HttpRequest request = HttpRequest.newBuilder()
-    .uri(URI.create("https://liege.dev/api/regex?guildid={guildid}"))
+    .uri(URI.create("https://api.liege.dev/regex?guildid={guildid}"))
     .method("DELETE", BodyPublishers.ofString("{ \"statement\": \"regexstatement1\" }"))
     .setHeader("Authorization", "Bearer BEARER_TOKEN")
     .setHeader("Content-Type", "application/json")

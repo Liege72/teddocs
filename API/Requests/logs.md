@@ -15,7 +15,7 @@ order: 60
 +++ cURL
 
 ```sh
-curl https://liege.dev/api/logs \
+curl https://api.liege.dev/logs \
     --header "Authorization: Bearer BEARER_TOKEN"
     --header "Content-Type: application/json" \
     --request POST \

@@ -14,14 +14,14 @@ order: 70
 ==- Example request
 
 ```
-curl https://liege.dev/api/settings/setting?guildid={guildid}&setting={setting} \
+curl https://api.liege.dev/settings/setting?guildid={guildid}&setting={setting} \
     --header "Authorization: Bearer BEARER_TOKEN" \
 ```
 
 <!-- +++ cURL
 
 ```sh
-curl https://liege.dev/api/settings/setting \
+curl https://api.liege.dev/settings/setting \
     --header "Authorization: Bearer BEARER_TOKEN" \
     --header "Content-Type: application/json" \
     --request GET \
@@ -36,7 +36,7 @@ using System.Net.Http.Headers;
 
 HttpClient client = new HttpClient();
 
-HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, "https://liege.dev/api/settings/getsetting");
+HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, "https://api.liege.dev/settings/getsetting");
 
 request.Headers.Add("Authorization", "Bearer BEARER_TOKEN");
 
@@ -51,7 +51,7 @@ string responseBody = await response.Content.ReadAsStringAsync();
 +++ JS
 
 ```js
-fetch("https://liege.dev/api/settings/getsetting", {
+fetch("https://api.liege.dev/settings/getsetting", {
     headers: {
         Authorization: "Bearer BEARER_TOKEN",
         "Content-Type": "application/json",
@@ -72,7 +72,7 @@ headers = {
 
 data = '{ "guildid": 000000000000000000, "setting": 0 }'
 
-response = requests.get('https://liege.dev/api/settings/getsetting', headers=headers, data=data)
+response = requests.get('https://api.liege.dev/settings/getsetting', headers=headers, data=data)
 ```
 
 +++ Java
@@ -88,7 +88,7 @@ import java.net.http.HttpResponse;
 HttpClient client = HttpClient.newHttpClient();
 
 HttpRequest request = HttpRequest.newBuilder()
-    .uri(URI.create("https://liege.dev/api/settings/getsetting"))
+    .uri(URI.create("https://api.liege.dev/settings/getsetting"))
     .method("GET", BodyPublishers.ofString("{ \"guildid\": 000000000000000000, \"setting\": 0 }"))
     .setHeader("Authorization", "Bearer BEARER_TOKEN")
     .setHeader("Content-Type", "application/json")
@@ -169,7 +169,7 @@ HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.o
 ==- Example request
 
 ```sh
-curl https://liege.dev/api/settings/setting \
+curl https://api.liege.dev/settings/setting \
     --header "Authorization: Bearer BEARER_TOKEN" \
     --header "Content-Type: application/json" \
     --request PATCH \
@@ -179,7 +179,7 @@ curl https://liege.dev/api/settings/setting \
 <!-- +++ cURL
 
 ```sh
-curl https://liege.dev/api/settings/setsetting \
+curl https://api.liege.dev/settings/setsetting \
     --header "Authorization: Bearer BEARER_TOKEN" \
     --header "Content-Type: application/json" \
     --request POST \
@@ -194,7 +194,7 @@ using System.Net.Http.Headers;
 
 HttpClient client = new HttpClient();
 
-HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, "https://liege.dev/api/settings/setsetting");
+HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, "https://api.liege.dev/settings/setsetting");
 
 request.Headers.Add("Authorization", "Bearer BEARER_TOKEN");
 
@@ -209,7 +209,7 @@ string responseBody = await response.Content.ReadAsStringAsync();
 +++ JS
 
 ```js
-fetch("https://liege.dev/api/settings/setsetting", {
+fetch("https://api.liege.dev/settings/setsetting", {
     method: "POST",
     headers: {
         Authorization: "Bearer BEARER_TOKEN",
@@ -231,7 +231,7 @@ headers = {
 
 data = '{ "guildid": 000000000000000000, "setting": 1, "config": { "isEnabled": true, "action": 1, "slowmodeInterval": 3 } }'
 
-response = requests.post('https://liege.dev/api/settings/setsetting', headers=headers, data=data)
+response = requests.post('https://api.liege.dev/settings/setsetting', headers=headers, data=data)
 ```
 
 +++ Java
@@ -247,7 +247,7 @@ import java.net.http.HttpResponse;
 HttpClient client = HttpClient.newHttpClient();
 
 HttpRequest request = HttpRequest.newBuilder()
-    .uri(URI.create("https://liege.dev/api/settings/setsetting"))
+    .uri(URI.create("https://api.liege.dev/settings/setsetting"))
     .POST(BodyPublishers.ofString("{ \"guildid\": 000000000000000000, \"setting\": 1, \"config\": { \"isEnabled\": true, \"action\": 1, \"slowmodeInterval\": 3 } }"))
     .setHeader("Authorization", "Bearer BEARER_TOKEN")
     .setHeader("Content-Type", "application/json")

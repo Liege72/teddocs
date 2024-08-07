@@ -14,7 +14,7 @@ order: 80
 ==- Example request
 
 ```sh
-curl https://liege.dev/api/settings/channels/modlog \
+curl https://api.liege.dev/settings/channels/modlog \
     --header "Authorization: Bearer BEARER_TOKEN" \
     --header "Content-Type: application/json" \
     --request PATCH \
@@ -24,7 +24,7 @@ curl https://liege.dev/api/settings/channels/modlog \
 <!-- +++ cURL
 
 ```sh
-curl https://liege.dev/api/settings/setmodlogchannel \
+curl https://api.liege.dev/settings/setmodlogchannel \
     --header "Authorization: Bearer BEARER_TOKEN" \
     --header "Content-Type: application/json" \
     --request POST \
@@ -39,7 +39,7 @@ using System.Net.Http.Headers;
 
 HttpClient client = new HttpClient();
 
-HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, "https://liege.dev/api/settings/setmodlogchannel");
+HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, "https://api.liege.dev/settings/setmodlogchannel");
 
 request.Headers.Add("Authorization", "Bearer BEARER_TOKEN");
 
@@ -54,7 +54,7 @@ string responseBody = await response.Content.ReadAsStringAsync();
 +++ JS
 
 ```js
-fetch("https://liege.dev/api/settings/setmodlogchannel", {
+fetch("https://api.liege.dev/settings/setmodlogchannel", {
     method: "POST",
     headers: {
         Authorization: "Bearer BEARER_TOKEN",
@@ -76,7 +76,7 @@ headers = {
 
 data = '{ "guildid": 000000000000000000, "channelid": 000000000000000000 }'
 
-response = requests.post('https://liege.dev/api/settings/setmodlogchannel', headers=headers, data=data)
+response = requests.post('https://api.liege.dev/settings/setmodlogchannel', headers=headers, data=data)
 ```
 
 +++ Java
@@ -92,7 +92,7 @@ import java.net.http.HttpResponse;
 HttpClient client = HttpClient.newHttpClient();
 
 HttpRequest request = HttpRequest.newBuilder()
-    .uri(URI.create("https://liege.dev/api/settings/setmodlogchannel"))
+    .uri(URI.create("https://api.liege.dev/settings/setmodlogchannel"))
     .POST(BodyPublishers.ofString("{ \"guildid\": 000000000000000000, \"channelid\": 000000000000000000 }"))
     .setHeader("Authorization", "Bearer BEARER_TOKEN")
     .setHeader("Content-Type", "application/json")
@@ -134,7 +134,7 @@ HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.o
 ==- Example request
 
 ```sh
-curl https://liege.dev/api/settings/channels/eventlog \
+curl https://api.liege.dev/settings/channels/eventlog \
     --header "Authorization: Bearer BEARER_TOKEN" \
     --header "Content-Type: application/json" \
     --request PATCH \
@@ -144,7 +144,7 @@ curl https://liege.dev/api/settings/channels/eventlog \
 <!-- +++ cURL
 
 ```sh
-curl https://liege.dev/api/settings/seteventslogchannel \
+curl https://api.liege.dev/settings/seteventslogchannel \
     --header "Authorization: Bearer BEARER_TOKEN" \
     --header "Content-Type: application/json" \
     --request POST \
@@ -159,7 +159,7 @@ using System.Net.Http.Headers;
 
 HttpClient client = new HttpClient();
 
-HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, "https://liege.dev/api/settings/seteventslogchannel");
+HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, "https://api.liege.dev/settings/seteventslogchannel");
 
 request.Headers.Add("Authorization", "Bearer BEARER_TOKEN");
 
@@ -174,7 +174,7 @@ string responseBody = await response.Content.ReadAsStringAsync();
 +++ JS
 
 ```js
-fetch("https://liege.dev/api/settings/seteventslogchannel", {
+fetch("https://api.liege.dev/settings/seteventslogchannel", {
     method: "POST",
     headers: {
         Authorization: "Bearer BEARER_TOKEN",
@@ -196,7 +196,7 @@ headers = {
 
 data = '{ "guildid": 000000000000000000, "channelid": 000000000000000000 }'
 
-response = requests.post('https://liege.dev/api/settings/seteventslogchannel', headers=headers, data=data)
+response = requests.post('https://api.liege.dev/settings/seteventslogchannel', headers=headers, data=data)
 ```
 
 +++ Java
@@ -212,7 +212,7 @@ import java.net.http.HttpResponse;
 HttpClient client = HttpClient.newHttpClient();
 
 HttpRequest request = HttpRequest.newBuilder()
-    .uri(URI.create("https://liege.dev/api/settings/seteventslogchannel"))
+    .uri(URI.create("https://api.liege.dev/settings/seteventslogchannel"))
     .POST(BodyPublishers.ofString("{ \"guildid\": 000000000000000000, \"channelid\": 000000000000000000 }"))
     .setHeader("Authorization", "Bearer BEARER_TOKEN")
     .setHeader("Content-Type", "application/json")
