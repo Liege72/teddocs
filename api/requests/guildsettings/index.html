@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.775795368541">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.776379982027">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -31,12 +31,12 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../../favicon.png" rel="icon">
-    <link href="../../../resources/css/retype.css?v=3.5.0.775795368541" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.776379982027" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.775795368541" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.776379982027" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.775795368541" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.775795368541" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.776379982027" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.776379982027" defer></script>
 
     <style>
         .api-container-parent {
@@ -215,13 +215,13 @@
    <doc-panel id="example-request" collapsed>
        <template #title>Example request</template>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">curl https://liege.dev/api/settings/setting?guildid={guildid}&amp;setting={setting} \
+<pre class="language-none"><code v-pre class="language-none">curl https://api.liege.dev/settings/setting?guildid={guildid}&amp;setting={setting} \
     --header &quot;Authorization: Bearer BEARER_TOKEN&quot; \</code></pre>
 </doc-codeblock></div>
 <!-- +++ cURL
 
 ```sh
-curl https://liege.dev/api/settings/setting \
+curl https://api.liege.dev/settings/setting \
     --header "Authorization: Bearer BEARER_TOKEN" \
     --header "Content-Type: application/json" \
     --request GET \
@@ -236,7 +236,7 @@ using System.Net.Http.Headers;
 
 HttpClient client = new HttpClient();
 
-HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, "https://liege.dev/api/settings/getsetting");
+HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, "https://api.liege.dev/settings/getsetting");
 
 request.Headers.Add("Authorization", "Bearer BEARER_TOKEN");
 
@@ -251,7 +251,7 @@ string responseBody = await response.Content.ReadAsStringAsync();
 +++ JS
 
 ```js
-fetch("https://liege.dev/api/settings/getsetting", {
+fetch("https://api.liege.dev/settings/getsetting", {
     headers: {
         Authorization: "Bearer BEARER_TOKEN",
         "Content-Type": "application/json",
@@ -272,7 +272,7 @@ headers = {
 
 data = '{ "guildid": 000000000000000000, "setting": 0 }'
 
-response = requests.get('https://liege.dev/api/settings/getsetting', headers=headers, data=data)
+response = requests.get('https://api.liege.dev/settings/getsetting', headers=headers, data=data)
 ```
 
 +++ Java
@@ -288,7 +288,7 @@ import java.net.http.HttpResponse;
 HttpClient client = HttpClient.newHttpClient();
 
 HttpRequest request = HttpRequest.newBuilder()
-    .uri(URI.create("https://liege.dev/api/settings/getsetting"))
+    .uri(URI.create("https://api.liege.dev/settings/getsetting"))
     .method("GET", BodyPublishers.ofString("{ \"guildid\": 000000000000000000, \"setting\": 0 }"))
     .setHeader("Authorization", "Bearer BEARER_TOKEN")
     .setHeader("Content-Type", "application/json")
@@ -453,7 +453,7 @@ HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.o
    <doc-panel id="example-request" collapsed>
        <template #title>Example request</template>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">curl https://liege.dev/api/settings/setting \
+<pre class="language-bash"><code v-pre class="language-bash">curl https://api.liege.dev/settings/setting \
     --header &quot;Authorization: Bearer BEARER_TOKEN&quot; \
     --header &quot;Content-Type: application/json&quot; \
     --request PATCH \
@@ -462,7 +462,7 @@ HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.o
 <!-- +++ cURL
 
 ```sh
-curl https://liege.dev/api/settings/setsetting \
+curl https://api.liege.dev/settings/setsetting \
     --header "Authorization: Bearer BEARER_TOKEN" \
     --header "Content-Type: application/json" \
     --request POST \
@@ -477,7 +477,7 @@ using System.Net.Http.Headers;
 
 HttpClient client = new HttpClient();
 
-HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, "https://liege.dev/api/settings/setsetting");
+HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, "https://api.liege.dev/settings/setsetting");
 
 request.Headers.Add("Authorization", "Bearer BEARER_TOKEN");
 
@@ -492,7 +492,7 @@ string responseBody = await response.Content.ReadAsStringAsync();
 +++ JS
 
 ```js
-fetch("https://liege.dev/api/settings/setsetting", {
+fetch("https://api.liege.dev/settings/setsetting", {
     method: "POST",
     headers: {
         Authorization: "Bearer BEARER_TOKEN",
@@ -514,7 +514,7 @@ headers = {
 
 data = '{ "guildid": 000000000000000000, "setting": 1, "config": { "isEnabled": true, "action": 1, "slowmodeInterval": 3 } }'
 
-response = requests.post('https://liege.dev/api/settings/setsetting', headers=headers, data=data)
+response = requests.post('https://api.liege.dev/settings/setsetting', headers=headers, data=data)
 ```
 
 +++ Java
@@ -530,7 +530,7 @@ import java.net.http.HttpResponse;
 HttpClient client = HttpClient.newHttpClient();
 
 HttpRequest request = HttpRequest.newBuilder()
-    .uri(URI.create("https://liege.dev/api/settings/setsetting"))
+    .uri(URI.create("https://api.liege.dev/settings/setsetting"))
     .POST(BodyPublishers.ofString("{ \"guildid\": 000000000000000000, \"setting\": 1, \"config\": { \"isEnabled\": true, \"action\": 1, \"slowmodeInterval\": 3 } }"))
     .setHeader("Authorization", "Bearer BEARER_TOKEN")
     .setHeader("Content-Type", "application/json")

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.775795368541">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.776379982027">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -31,12 +31,12 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../../favicon.png" rel="icon">
-    <link href="../../../resources/css/retype.css?v=3.5.0.775795368541" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.776379982027" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.775795368541" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.776379982027" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.775795368541" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.775795368541" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.776379982027" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.776379982027" defer></script>
 
     <style>
         .api-container-parent {
@@ -215,7 +215,7 @@
    <doc-panel id="example-request" collapsed>
        <template #title>Example request</template>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">curl https://liege.dev/api/censor?guildid={guildid} \
+<pre class="language-bash"><code v-pre class="language-bash">curl https://api.liege.dev/censor?guildid={guildid} \
     --header &quot;Authorization: Bearer BEARER_TOKEN&quot;</code></pre>
 </doc-codeblock></div>
 <!--
@@ -228,7 +228,7 @@ using System.Net.Http;
 
 HttpClient client = new HttpClient();
 
-HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, "https://liege.dev/api/censors?guildid={guildid}");
+HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, "https://api.liege.dev/censors?guildid={guildid}");
 
 request.Headers.Add("Authorization", "Bearer BEARER_TOKEN");
 
@@ -240,7 +240,7 @@ string responseBody = await response.Content.ReadAsStringAsync();
 +++ JS
 
 ```js
-fetch("https://liege.dev/api/censors?guildid={guildid}", {
+fetch("https://api.liege.dev/censors?guildid={guildid}", {
     headers: {
         Authorization: "Bearer BEARER_TOKEN",
     },
@@ -256,7 +256,7 @@ headers = {
     'Authorization': 'Bearer BEARER_TOKEN',
 }
 
-response = requests.get('https://liege.dev/api/censors?guildid={guildid}', headers=headers)
+response = requests.get('https://api.liege.dev/censors?guildid={guildid}', headers=headers)
 ```
 
 +++ Java
@@ -271,7 +271,7 @@ import java.net.http.HttpResponse;
 HttpClient client = HttpClient.newHttpClient();
 
 HttpRequest request = HttpRequest.newBuilder()
-    .uri(URI.create("https://liege.dev/api/censors?guildid={guildid}"))
+    .uri(URI.create("https://api.liege.dev/censors?guildid={guildid}"))
     .GET()
     .setHeader("Authorization", "Bearer BEARER_TOKEN")
     .build();
@@ -327,7 +327,7 @@ HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.o
    <doc-panel id="example-request" collapsed>
        <template #title>Example request</template>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">curl https://liege.dev/api/censor \
+<pre class="language-bash"><code v-pre class="language-bash">curl https://api.liege.dev/censor \
     --header &quot;Authorization: Bearer BEARER_TOKEN&quot; \
     --header &quot;Content-Type: application/json&quot; \
     --request POST \
@@ -336,7 +336,7 @@ HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.o
 <!-- +++ cURL
 
 ```sh
-curl https://liege.dev/api/censor?guildid={guildid} \
+curl https://api.liege.dev/censor?guildid={guildid} \
     --header "Authorization: Bearer BEARER_TOKEN" \
     --header "Content-Type: application/json" \
     --request POST \
@@ -351,7 +351,7 @@ using System.Net.Http.Headers;
 
 HttpClient client = new HttpClient();
 
-HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, "https://liege.dev/api/censors?guildid={guildid}");
+HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, "https://api.liege.dev/censors?guildid={guildid}");
 
 request.Headers.Add("Authorization", "Bearer BEARER_TOKEN");
 
@@ -366,7 +366,7 @@ string responseBody = await response.Content.ReadAsStringAsync();
 +++ JS
 
 ```js
-fetch("https://liege.dev/api/censors?guildid={guildid}", {
+fetch("https://api.liege.dev/censors?guildid={guildid}", {
     method: "POST",
     headers: {
         Authorization: "Bearer BEARER_TOKEN",
@@ -399,7 +399,7 @@ json_data = {
     'action': 2,
 }
 
-response = requests.post('https://liege.dev/api/censors?guildid={guildid}', headers=headers, json=json_data)
+response = requests.post('https://api.liege.dev/censors?guildid={guildid}', headers=headers, json=json_data)
 ```
 
 +++ Java
@@ -415,7 +415,7 @@ import java.net.http.HttpResponse;
 HttpClient client = HttpClient.newHttpClient();
 
 HttpRequest request = HttpRequest.newBuilder()
-    .uri(URI.create("https://liege.dev/api/censors?guildid={guildid}"))
+    .uri(URI.create("https://api.liege.dev/censors?guildid={guildid}"))
     .POST(BodyPublishers.ofString("{ \"terms\": [\"badword1\", \"badword2\", \"badword3\"], \"action\": 2 }"))
     .setHeader("Authorization", "Bearer BEARER_TOKEN")
     .setHeader("Content-Type", "application/json")
@@ -533,7 +533,7 @@ HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.o
    <doc-panel id="example-request" collapsed>
        <template #title>Example request</template>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">curl https://liege.dev/api/censor \
+<pre class="language-bash"><code v-pre class="language-bash">curl https://api.liege.dev/censor \
     --header &quot;Authorization: Bearer BEARER_TOKEN&quot; \
     --header &quot;Content-Type: application/json&quot; \
     --request DELETE \
@@ -542,7 +542,7 @@ HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.o
 <!-- +++ cURL
 
 ```sh
-curl https://liege.dev/api/censor \
+curl https://api.liege.dev/censor \
     --header "Authorization: Bearer BEARER_TOKEN" \
     --header "Content-Type: application/json" \
     --request DELETE \
@@ -557,7 +557,7 @@ using System.Net.Http.Headers;
 
 HttpClient client = new HttpClient();
 
-HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Delete, "https://liege.dev/api/regex?guildid={guildid}");
+HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Delete, "https://api.liege.dev/regex?guildid={guildid}");
 
 request.Headers.Add("Authorization", "Bearer BEARER_TOKEN");
 
@@ -573,7 +573,7 @@ string responseBody = await response.Content.ReadAsStringAsync();
 +++ JS
 
 ```js
-fetch("https://liege.dev/api/regex?guildid={guildid}", {
+fetch("https://api.liege.dev/regex?guildid={guildid}", {
     method: "DELETE",
     headers: {
         Authorization: "Bearer BEARER_TOKEN",
@@ -604,12 +604,12 @@ json_data = {
     ],
 }
 
-response = requests.delete('https://liege.dev/api/regex?guildid={guildid}', headers=headers, json=json_data)
+response = requests.delete('https://api.liege.dev/regex?guildid={guildid}', headers=headers, json=json_data)
 
 # Note: json_data will not be serialized by requests
 # exactly as it was in the original request.
 #data = '{ "terms": ["badword1", "badword2", "badword3"] }'
-#response = requests.delete('https://liege.dev/api/regex?guildid={guildid}', headers=headers, data=data)
+#response = requests.delete('https://api.liege.dev/regex?guildid={guildid}', headers=headers, data=data)
 
 ```
 
@@ -626,7 +626,7 @@ import java.net.http.HttpResponse;
 HttpClient client = HttpClient.newHttpClient();
 
 HttpRequest request = HttpRequest.newBuilder()
-    .uri(URI.create("https://liege.dev/api/regex?guildid={guildid}"))
+    .uri(URI.create("https://api.liege.dev/regex?guildid={guildid}"))
     .method("DELETE", BodyPublishers.ofString("{ \"terms\": [\"badword1\", \"badword2\", \"badword3\"] }"))
     .setHeader("Authorization", "Bearer BEARER_TOKEN")
     .setHeader("Content-Type", "application/json")
