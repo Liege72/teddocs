@@ -29,3 +29,8 @@ If your server is currently experiencing an attack, or if you've recently faced 
 -   Pause invites for 2 hours
 -   Pause DMs for 2 hours
 -   Flag new suspicious users
+=======
+order: 100
+---
+
+[!button Button](button.md)
